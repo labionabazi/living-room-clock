@@ -27,17 +27,17 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     --app-background-color: #000000;
     text-align: center;
-    color: #000000;
-    margin-top: 60px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 90vh;
+    min-height: 98vh;
   }
   body {
-      background-color: #000000;
+    background-color: #000000;
+    background-image: url('./assets/mosque.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 </style>

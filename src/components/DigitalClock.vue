@@ -13,7 +13,7 @@
       <div v-if="ditaRam" id="ramadan">{{ditaRam}} Ram. 2021</div>
       <table class="table">
         <tr>
-          <td class="ram">Imsaku</td>
+          <td class="ram">Syfyri</td>
           <td class="zeit ram">{{imsaku}}</td>
         </tr>
         <tr>
@@ -25,7 +25,7 @@
           <td class="zeit">{{ikindia}}</td>
         </tr>
         <tr>
-          <td class="ram">Akshami</td>
+          <td class="ram">Iftari</td>
           <td class="zeit ram">{{akshami}}</td>
         </tr>
         <tr>
@@ -80,12 +80,11 @@ export default {
 
       //get and format the date
       var day = date.getDay()
-      // var dayarray = ["e diel", "e hënë", "e marte", "e mërkurë", "e enjte", "e premte", "e shtunë", "e diel"];
-      // day = dayarray[day];
-      day = "e hënë"
+      var dayarray = ["e diel", "e hënë", "e marte", "e mërkurë", "e enjte", "e premte", "e shtunë", "e diel"];
+      day = dayarray[day];
 
-      var dateNumber = date.getDate()
-      // var dateNumber = 13
+      // var dateNumber = date.getDate()
+      var dateNumber = 13
       
       var month = date.getMonth()
       var montharray = ["janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"];
@@ -120,13 +119,11 @@ export default {
       var jaciaSound = this.jacia + ":00"
 
       if (this.timeToCheck === akshamiSound || this.timeToCheck === jaciaSound){
-        console.log("Qazim")
         this.playSound()
       }
 
       if (this.timeToCheck === drekaSound || this.timeToCheck === ikindiaSound) {
         if (day === "e shtunë" || day === "e diel"){
-        console.log("hans")
           this.playSound()
         }
       }
@@ -367,29 +364,31 @@ export default {
 
 <style scoped>
   #titel{
-    font-size: 120pt;
+    font-size: 125pt;
     margin: -20pt 0;
   }
   #clock{
-    font-size: 150pt;
+    font-size: 155pt;
   }
   #date{
-    font-size: 50pt;
+    font-size: 55pt;
   }
   #ramadan{
-    font-size: 40pt;
+    font-size: 45pt;
+    font-weight: 600;
   }
   #text{
     margin-top: 10px;
     font-size: 18pt;
   }
   .digitalClock{
-    background-color: #8b864e;
     justify-content: center;
     align-items: center;
     display: flex;
     width: 100%;
     height: 400px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(7px); 
   }
   .leftContainer{
     margin-right: 20px;
@@ -411,5 +410,8 @@ export default {
     font-family: 'Exo', sans-serif;
     font-family: 'Geo', sans-serif;
     font-family: 'Orbitron', sans-serif;
+  }
+  .ram{
+    font-weight: 600;
   }
 </style>
