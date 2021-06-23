@@ -10,27 +10,27 @@
     <div class="middleContainer">
     </div>
     <div class="rightContainer">
-      <div v-if="ditaRam" id="ramadan">{{ditaRam}} Ram. 2021</div>
+      <!-- <div v-if="ditaRam" id="ramadan">{{ditaRam}} Ram. 2021</div> -->
       <table class="table">
         <tr>
-          <td class="ram">Syfyri</td>
+          <td class="ram">Imsaku</td>
           <td class="zeit ram">{{imsaku}}</td>
         </tr>
         <tr>
-          <td>Dreka</td>
-          <td class="zeit">{{dreka}}</td>
+          <td class="ram">Dreka</td>
+          <td class="zeit ram">{{dreka}}</td>
         </tr>
         <tr>
-          <td>Ikindija</td>
-          <td class="zeit">{{ikindia}}</td>
+          <td class="ram">Ikindija</td>
+          <td class="zeit ram">{{ikindia}}</td>
         </tr>
         <tr>
-          <td class="ram">Iftari</td>
+          <td class="ram">Akshami</td>
           <td class="zeit ram">{{akshami}}</td>
         </tr>
         <tr>
-          <td>Jacia</td>
-          <td class="zeit">{{jacia}}</td>
+          <td class="ram">Jacia</td>
+          <td class="zeit ram">{{jacia}}</td>
         </tr>
       </table>
     </div>
@@ -83,8 +83,7 @@ export default {
       var dayarray = ["e diel", "e hënë", "e marte", "e mërkurë", "e enjte", "e premte", "e shtunë", "e diel"];
       day = dayarray[day];
 
-      // var dateNumber = date.getDate()
-      var dateNumber = 13
+      var dateNumber = date.getDate()
       
       var month = date.getMonth()
       var montharray = ["janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"];
@@ -118,11 +117,11 @@ export default {
       var akshamiSound = this.akshami + ":00"
       var jaciaSound = this.jacia + ":00"
 
-      if (this.timeToCheck === akshamiSound || this.timeToCheck === jaciaSound){
+      if (this.timeToCheck === akshamiSound){
         this.playSound()
       }
 
-      if (this.timeToCheck === drekaSound || this.timeToCheck === ikindiaSound) {
+      if (this.timeToCheck === drekaSound || this.timeToCheck === ikindiaSound || this.timeToCheck === jaciaSound) {
         if (day === "e shtunë" || day === "e diel"){
           this.playSound()
         }
@@ -138,224 +137,252 @@ export default {
     getVaktia(dateNumber) {
       switch (dateNumber) {
         case 1:
-          this.imsaku = "04:21"
-          this.dreka = "13:26"
-          this.ikindia = "17:25"
-          this.akshami = "20:46"
-          this.jacia = "22:16"
+          this.imsaku = "03:46"
+          this.dreka = "13:27"
+          this.ikindia = "17:39"
+          this.akshami = "21:23"
+          this.jacia = "23:36"
+          // this.ditaRam = "19"
           break
         case 2:
-          this.imsaku = "04:20"
-          this.dreka = "13:26"
-          this.ikindia = "17:26"
-          this.akshami = "20:48"
-          this.jacia = "22:18"
+          this.imsaku = "03:45"
+          this.dreka = "13:27"
+          this.ikindia = "17:40"
+          this.akshami = "21:24"
+          this.jacia = "22:54"
+          // this.ditaRam = "20"
           break
         case 3:
-          this.imsaku = "04:18"
-          this.dreka = "13:26"
-          this.ikindia = "17:26"
-          this.akshami = "20:49"
-          this.jacia = "22:19"
+          this.imsaku = "03:44"
+          this.dreka = "13:28"
+          this.ikindia = "17:40"
+          this.akshami = "21:25"
+          this.jacia = "22:55"
+          // this.ditaRam = "21"
           break
         case 4:
-          this.imsaku = "04:17"
-          this.dreka = "13:26"
-          this.ikindia = "17:26"
-          this.akshami = "20:50"
-          this.jacia = "22:20"
+          this.imsaku = "03:44"
+          this.dreka = "13:28"
+          this.ikindia = "17:40"
+          this.akshami = "21:26"
+          this.jacia = "22:56"
+          // this.ditaRam = "22"
           break
         case 5:
-          this.imsaku = "04:15"
-          this.dreka = "13:26"
-          this.ikindia = "17:27"
-          this.akshami = "20:52"
-          this.jacia = "22:22"
+          this.imsaku = "03:43"
+          this.dreka = "13:28"
+          this.ikindia = "17:41"
+          this.akshami = "21:27"
+          this.jacia = "22:57"
+          // this.ditaRam = "23"
           break
         case 6:
-          this.imsaku = "04:14"
-          this.dreka = "13:26"
-          this.ikindia = "17:28"
-          this.akshami = "20:53"
-          this.jacia = "22:23"
+          this.imsaku = "03:43"
+          this.dreka = "13:28"
+          this.ikindia = "17:41"
+          this.akshami = "21:28"
+          this.jacia = "22:58"
+          // this.ditaRam = "24"
           break
         case 7:
-          this.imsaku = "04:12"
-          this.dreka = "13:26"
-          this.ikindia = "17:28"
-          this.akshami = "20:54"
-          this.jacia = "22:24"
+          this.imsaku = "03:43"
+          this.dreka = "13:28"
+          this.ikindia = "17:41"
+          this.akshami = "21:28"
+          this.jacia = "22:58"
+          // this.ditaRam = "25"
           break
         case 8:
-          this.imsaku = "04:11"
-          this.dreka = "13:26"
-          this.ikindia = "17:29"
-          this.akshami = "20:56"
-          this.jacia = "22:26"
+          this.imsaku = "03:42"
+          this.dreka = "13:28"
+          this.ikindia = "17:42"
+          this.akshami = "21:29"
+          this.jacia = "22:59"
+          // this.ditaRam = "26"
           break
         case 9:
-          this.imsaku = "04:09"
-          this.dreka = "13:26"
-          this.ikindia = "17:29"
-          this.akshami = "20:57"
-          this.jacia = "22:27"
+          this.imsaku = "03:42"
+          this.dreka = "13:29"
+          this.ikindia = "17:42"
+          this.akshami = "21:30"
+          this.jacia = "23:00"
+          // this.ditaRam = "27"
           break
         case 10:
-          this.imsaku = "04:08"
-          this.dreka = "13:26"
-          this.ikindia = "17:30"
-          this.akshami = "20:58"
-          this.jacia = "22:28"
+          this.imsaku = "03:42"
+          this.dreka = "13:29"
+          this.ikindia = "17:42"
+          this.akshami = "21:30"
+          this.jacia = "23:00"
+          // this.ditaRam = "28"
           break
         case 11:
-          this.imsaku = "04:07"
-          this.dreka = "13:26"
-          this.ikindia = "17:30"
-          this.akshami = "21:00"
-          this.jacia = "22:30"
+          this.imsaku = "03:41"
+          this.dreka = "13:29"
+          this.ikindia = "17:43"
+          this.akshami = "21:31"
+          this.jacia = "23:01"
+          // this.ditaRam = "29"
           break
-        //Bis hier ist schon Mai
         case 12:
-          this.imsaku = "04:55"
-          this.dreka = "13:30"
-          this.ikindia = "17:15"
-          this.akshami = "20:20"
-          this.jacia = "21:50"
+          this.imsaku = "03:41"
+          this.dreka = "13:29"
+          this.ikindia = "17:43"
+          this.akshami = "21:31"
+          this.jacia = "23:01"
           break
         case 13:
-          this.imsaku = "04:53"
-          this.dreka = "13:30"
-          this.ikindia = "17:16"
-          this.akshami = "20:21"
-          this.jacia = "21:51"
-          this.ditaRam = "1"
+          this.imsaku = "03:41"
+          this.dreka = "13:29"
+          this.ikindia = "17:43"
+          this.akshami = "21:32"
+          this.jacia = "23:02"
+          // this.ditaRam = "1"
           break
         case 14:
-          this.imsaku = "04:51"
-          this.dreka = "13:29"
-          this.ikindia = "17:16"
-          this.akshami = "20:23"
-          this.jacia = "21:53"
+          this.imsaku = "03:41"
+          this.dreka = "13:30"
+          this.ikindia = "17:44"
+          this.akshami = "21:32"
+          this.jacia = "23:02"
+          // this.ditaRam = "2"
           break
         case 15:
-          this.imsaku = "04:49"
-          this.dreka = "13:29"
-          this.ikindia = "17:17"
-          this.akshami = "20:24"
-          this.jacia = "21:54"
+          this.imsaku = "03:41"
+          this.dreka = "13:30"
+          this.ikindia = "17:44"
+          this.akshami = "21:33"
+          this.jacia = "23:03"
+          // this.ditaRam = "3"
           break
         case 16:
-          this.imsaku = "04:48"
-          this.dreka = "13:29"
-          this.ikindia = "17:17"
-          this.akshami = "20:25"
-          this.jacia = "21:55"
+          this.imsaku = "03:41"
+          this.dreka = "13:30"
+          this.ikindia = "17:44"
+          this.akshami = "21:33"
+          this.jacia = "23:03"
+          // this.ditaRam = "4"
           break
         case 17:
-          this.imsaku = "04:46"
-          this.dreka = "13:29"
-          this.ikindia = "17:18"
-          this.akshami = "20:27"
-          this.jacia = "21:57"
+          this.imsaku = "03:41"
+          this.dreka = "13:30"
+          this.ikindia = "17:44"
+          this.akshami = "21:34"
+          this.jacia = "23:04"
+          // this.ditaRam = "5"
           break
         case 18:
-          this.imsaku = "04:44"
-          this.dreka = "13:29"
-          this.ikindia = "17:18"
-          this.akshami = "20:28"
-          this.jacia = "21:58"
+          this.imsaku = "03:41"
+          this.dreka = "13:30"
+          this.ikindia = "17:45"
+          this.akshami = "21:34"
+          this.jacia = "23:04"
+          // this.ditaRam = "6"
           break
         case 19:
-          this.imsaku = "04:42"
-          this.dreka = "13:28"
-          this.ikindia = "17:19"
-          this.akshami = "20:30"
-          this.jacia = "22:00"
+          this.imsaku = "03:41"
+          this.dreka = "13:31"
+          this.ikindia = "17:45"
+          this.akshami = "21:34"
+          this.jacia = "23:04"
+          // this.ditaRam = "7"
           break
         case 20:
-          this.imsaku = "04:40"
-          this.dreka = "13:27"
-          this.ikindia = "17:20"
-          this.akshami = "20:31"
-          this.jacia = "22:01"
+          this.imsaku = "03:41"
+          this.dreka = "13:31"
+          this.ikindia = "17:45"
+          this.akshami = "21:35"
+          this.jacia = "23:05"
+          // this.ditaRam = "8"
           break
         case 21:
-          this.imsaku = "04:38"
-          this.dreka = "13:28"
-          this.ikindia = "17:20"
-          this.akshami = "20:32"
-          this.jacia = "22:02"
+          this.imsaku = "03:42"
+          this.dreka = "13:31"
+          this.ikindia = "17:45"
+          this.akshami = "21:35"
+          this.jacia = "23:05"
+          // this.ditaRam = "9"
           break
         case 22:
-          this.imsaku = "04:37"
-          this.dreka = "13:28"
-          this.ikindia = "17:21"
-          this.akshami = "20:34"
-          this.jacia = "22:04"
+          this.imsaku = "03:42"
+          this.dreka = "13:31"
+          this.ikindia = "17:46"
+          this.akshami = "21:35"
+          this.jacia = "23:05"
+          // this.ditaRam = "10"
           break
         case 23:
-          this.imsaku = "04:35"
-          this.dreka = "13:28"
-          this.ikindia = "17:21"
-          this.akshami = "20:35"
-          this.jacia = "22:05"
+          this.imsaku = "03:42"
+          this.dreka = "13:32"
+          this.ikindia = "17:46"
+          this.akshami = "21:35"
+          this.jacia = "23:05"
+          // this.ditaRam = "11"
           break
         case 24:
-          this.imsaku = "04:33"
-          this.dreka = "13:27"
-          this.ikindia = "17:22"
-          this.akshami = "20:37"
-          this.jacia = "22:07"
+          this.imsaku = "03:42"
+          this.dreka = "13:32"
+          this.ikindia = "17:46"
+          this.akshami = "21:35"
+          this.jacia = "23:05"
+          // this.ditaRam = "12"
           break
+        // Bis hier ist schon April
         case 25:
-          this.imsaku = "04:31"
-          this.dreka = "13:27"
-          this.ikindia = "17:22"
-          this.akshami = "20:38"
-          this.jacia = "22:08"
+          this.imsaku = "03:51"
+          this.dreka = "13:26"
+          this.ikindia = "17:36"
+          this.akshami = "21:16"
+          this.jacia = "22:46"
+          // this.ditaRam = "13"
           break
         case 26:
-          this.imsaku = "04:30"
-          this.dreka = "13:27"
-          this.ikindia = "17:23"
-          this.akshami = "20:39"
-          this.jacia = "22:09"
+          this.imsaku = "03:50"
+          this.dreka = "13:26"
+          this.ikindia = "17:37"
+          this.akshami = "21:17"
+          this.jacia = "22:47"
+          // this.ditaRam = "14"
           break
         case 27:
-          this.imsaku = "04:28"
+          this.imsaku = "03:49"
           this.dreka = "13:27"
-          this.ikindia = "17:23"
-          this.akshami = "20:41"
-          this.jacia = "22:11"
+          this.ikindia = "17:37"
+          this.akshami = "21:19"
+          this.jacia = "22:49"
+          // this.ditaRam = "15"
           break
         case 28:
-          this.imsaku = "04:26"
+          this.imsaku = "03:48"
           this.dreka = "13:27"
-          this.ikindia = "17:24"
-          this.akshami = "20:42"
-          this.jacia = "22:12"
+          this.ikindia = "17:38"
+          this.akshami = "21:20"
+          this.jacia = "22:50"
+          // this.ditaRam = "16"
           break
         case 29:
-          this.imsaku = "04:25"
+          this.imsaku = "03:48"
           this.dreka = "13:27"
-          this.ikindia = "17:24"
-          this.akshami = "20:43"
-          this.jacia = "22:13"
+          this.ikindia = "17:38"
+          this.akshami = "21:21"
+          this.jacia = "22:51"
+          // this.ditaRam = "17"
           break
         case 30:
-          this.imsaku = "04:23"
-          this.dreka = "13:26"
-          this.ikindia = "17:25"
-          this.akshami = "20:45"
-          this.jacia = "22:15"
+          this.imsaku = "03:47"
+          this.dreka = "13:27"
+          this.ikindia = "17:38"
+          this.akshami = "21:22"
+          this.jacia = "22:52"
+          // this.ditaRam = "18"
           break
-        // case 31:
-        //   this.imsaku = "05:19"
-        //   this.dreka = "13:33"
-        //   this.ikindia = "17:07"
-        //   this.akshami = "20:03"
-        //   this.jacia = "21:33"
-        //   break
+        case 31:
+          this.imsaku = "03:46"
+          this.dreka = "13:27"
+          this.ikindia = "17:39"
+          this.akshami = "21:22"
+          this.jacia = "22:52"
+          break
       }
     },
   },
@@ -412,6 +439,7 @@ export default {
     font-family: 'Orbitron', sans-serif;
   }
   .ram{
+    font-size: 40pt;
     font-weight: 600;
   }
 </style>
